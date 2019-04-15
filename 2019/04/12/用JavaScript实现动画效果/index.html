@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><title>用JavaScript实现动画效果</title><link rel="stylesheet" href="css/normalize.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">用JavaScript实现动画效果</p></h2><div class="post-date"><time datetime="2019-04-11T16:33:22.000Z">2019-04-12</time></div><div class="post-content"><h2 id="动画的基础知识"><a href="#动画的基础知识" class="headerlink" title="动画的基础知识"></a>动画的基础知识</h2><p>动画是样式随时间变化的的一个很好的例子，简单来说，动画就是元素的位置随时间的变化而发生变化的一种函数。     </p>
+<ol>
+<li><p>位置<br>设置元素在网页里的位置的任务一般是属于表示层的，也就是CSS的任务，例子如下：    </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同样也可以用js来设置：   </p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">element.style.top = <span class="string">"100px"</span>;</span><br><span class="line">element.style.left = <span class="string">"30px"</span>;</span><br></pre></td></tr></table></figure>
+<p>这就表示了该元素将被摆放在距离网页顶部100px处，距离网页左端30px处，position属性有四个可选择的值。  </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td>static</td>
+<td>position属性的默认值，元素的位置想会按照元素出现的先后顺序依次出现</td>
+</tr>
+<tr>
+<td>position</td>
+<td>fixed</td>
+<td></td>
+</tr>
+<tr>
+<td>position</td>
+<td>relative</td>
+<td>表现形式和static相似，区别是position属性值为relative还可以从文档的正常显示顺序里脱离出来</td>
+</tr>
+<tr>
+<td>position</td>
+<td>absolute</td>
+<td>如果我某个元素的position值设为absolute，那么我们就可以把它放在容纳它的<strong>容器</strong>中的任意位置</td>
+</tr>
+</tbody>
+</table>
+<p><strong>容器</strong>：这里的容器也是一个元素，只不过需要一定的条件   </p>
+<ul>
+<li>该元素的position属性是fixed或absolute</li>
+<li>改元素的父元素的position属性是fixed或absolute</li>
+</ul>
+<p>把文档里的元素放在特定的地方不需要花太大的功夫，我们假定就这样一个元素：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"message"</span>&gt;</span>Woo<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>用js代码来设置这个元素的初始位置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">positionMessage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById(<span class="string">'message'</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">var</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">'message'</span>);</span><br><span class="line">    elem.style.position = <span class="string">"absolute"</span>;</span><br><span class="line">    elem.style.top = <span class="string">"100px"</span>;</span><br><span class="line">    elem.style.left = <span class="string">"30px"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在我们想让这个元素的位置随时间的变化而变化     </p>
+<ol start="2">
+<li>时间   </li>
+</ol>
+<p>接下来会用到的函数：   </p>
+<ul>
+<li><p>setTimeout( “<em>function</em>“, interval );    </p>
+<ul>
+<li>第一个参数通常是一个字符串，其内容是要执行的函数的名字。   </li>
+<li>第二个参数是一个数值，它以毫秒为单位设定了需要经过多长时间才执行第一个参数传给它的函数。   </li>
+<li>该函数还有一个返回值，当我们想要结束取消一个还在等待执行的函数，就可以把这个函数的返回值赋值给一个变量，然后调用cleanTimeout( )函数。</li>
+</ul>
+</li>
+<li><p>cleanTimeout( );  </p>
+<ul>
+<li>取消待执行函数的排队。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movement = setTimeout( <span class="string">"positionMessage"</span>, <span class="number">5000</span> );    <span class="comment">//让函数positionMessage()5000毫秒后执行</span></span><br><span class="line">cleanTimeout( movment ); <span class="comment">//取消执行</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>时间递增量   </li>
+</ol>
+<p>我们需要对我们函数进行升级，即使使用了setTimeout( )函数，这个元素的行为依然不像动画，只不过是过了一段时间后突然跳到另一个位置</p>
+<p>首先设定一个目标位置值，在positionMessage( )函数中递增top和left的值，直到达到目标值    </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">messageMove</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">document</span>.getElementById(<span class="string">"message"</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">"message"</span>);</span><br><span class="line"><span class="keyword">var</span> ypos = parInt(elem.style.top);</span><br><span class="line"><span class="keyword">var</span> xpos = parInt(elem.style.left);</span><br><span class="line"><span class="keyword">if</span> (xpos == <span class="number">200</span> &amp;&amp; ypos == <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (xpos &lt; <span class="number">200</span>) xpos++;</span><br><span class="line"><span class="keyword">if</span> (ypos &lt; <span class="number">200</span>) ypos++;</span><br><span class="line"><span class="keyword">if</span> (xpos &gt; <span class="number">200</span>) xpos--;</span><br><span class="line"><span class="keyword">if</span> (ypos &gt; <span class="number">200</span>) ypos--;</span><br><span class="line">elem.style.top = ypos + <span class="string">'px'</span>;</span><br><span class="line">elem.style.left = xpos + <span class="string">'px'</span>;</span><br><span class="line">movement = setTimeout(<span class="string">"positionMessage"</span>,<span class="number">10</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果想让这个函数更加通用，只要改变增加一些形参，并做一些修改就行了</p>
+<p>在后面会优化我的代码，升级动画效果</p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
