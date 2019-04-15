@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-15T11:15:53.036Z</updated>
+  <updated>2019-04-15T11:50:24.266Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,25 +17,26 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>JS中String类型学习笔记</title>
     <link href="http://yoursite.com/2019/04/15/JS%E4%B8%ADString%E7%B1%BB%E5%9E%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2019/04/15/JS中String类型学习笔记/</id>
-    <published>2019-04-15T10:47:58.022Z</published>
-    <updated>2019-04-15T11:15:53.036Z</updated>
+    <published>2019-04-15T10:47:57.000Z</published>
+    <updated>2019-04-15T11:50:24.266Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: JS中String类型学习笔记<br>date: 2019-04-15 18:47:57</p><h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h2 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h2><p>1.’’ 或者 “” 都可以表示一个字符串    </p><ol start="2"><li>字符字面量，就是转义字符    </li></ol><table><thead><tr><th>字面量</th><th>含义</th></tr></thead><tbody><tr><td>\n</td><td>换行</td></tr><tr><td>\t</td><td>制表符</td></tr><tr><td>\b</td><td>空格</td></tr><tr><td>\r</td><td>回车</td></tr><tr><td>\f</td><td>进纸</td></tr><tr><td>\\</td><td>斜杠</td></tr><tr><td>\‘</td><td>单引号，如 ‘ It \‘s mine ‘</td></tr><tr><td>\“</td><td>双引号， 如 “ It \“s mine “</td></tr><tr><td>\xnn</td><td>以十六进制(n为0~f)表示的字符，如’\x41’表示 ‘A’</td></tr><tr><td>\unnnn</td><td>以十六进制(n为0~f)表示Unicode字符，如’\x03a3’表示希腊字母Σ</td></tr></tbody></table><p>3.字符串的长度，length属性       </p><p>4.字符串不可变，一旦创建，不可修改，字符串的拼接也是重新定义了新的字符串再删除原来的字符串。       </p><p>5.用toString()方法和String()转换成字符串。  </p><ul><li>在不知道转换变量是“null”还是“undefined“时，用String()。如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var value1 = 10;      </span><br><span class="line">var value2 = true;    </span><br><span class="line">var value3 =  null;</span><br><span class="line">var value4</span><br><span class="line"></span><br><span class="line">String(value1);    //&quot;10&quot;</span><br><span class="line">String(value2);    //&quot;true&quot;</span><br><span class="line">String(value3);    //&quot;null&quot;</span><br><span class="line">String(value4);    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h1><p>1.’’ 或者 “” 都可以表示一个字符串    </p><ol start="2"><li>字符字面量，就是转义字符    </li></ol><table><thead><tr><th>字面量</th><th>含义</th></tr></thead><tbody><tr><td>\n</td><td>换行</td></tr><tr><td>\t</td><td>制表符</td></tr><tr><td>\b</td><td>空格</td></tr><tr><td>\r</td><td>回车</td></tr><tr><td>\f</td><td>进纸</td></tr><tr><td>\\</td><td>斜杠</td></tr><tr><td>\‘</td><td>单引号，如 ‘ It \‘s mine ‘</td></tr><tr><td>\“</td><td>双引号， 如 “ It \“s mine “</td></tr><tr><td>\xnn</td><td>以十六进制(n为0~f)表示的字符，如’\x41’表示 ‘A’</td></tr><tr><td>\unnnn</td><td>以十六进制(n为0~f)表示Unicode字符，如’\x03a3’表示希腊字母Σ</td></tr></tbody></table><p>3.字符串的长度，length属性       </p><p>4.字符串不可变，一旦创建，不可修改，字符串的拼接也是重新定义了新的字符串再删除原来的字符串。       </p><p>5.用toString()方法和String()转换成字符串。  </p><ul><li>在不知道转换变量是“null”还是“undefined“时，用String()。如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var value1 = 10;      </span><br><span class="line">var value2 = true;    </span><br><span class="line">var value3 =  null;</span><br><span class="line">var value4</span><br><span class="line"></span><br><span class="line">String(value1);    //&quot;10&quot;</span><br><span class="line">String(value2);    //&quot;true&quot;</span><br><span class="line">String(value3);    //&quot;null&quot;</span><br><span class="line">String(value4);    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: JS中String类型学习笔记&lt;br&gt;date: 2019-04-15 18:47:57&lt;/p&gt;
-&lt;h2 id=&quot;tags&quot;&gt;&lt;a href=&quot;#tags&quot; class=&quot;headerlink&quot; title=&quot;tags:&quot;&gt;&lt;/a&gt;tags:&lt;/h2
+        &lt;h1 id=&quot;String-类型&quot;&gt;&lt;a href=&quot;#String-类型&quot; class=&quot;headerlink&quot; title=&quot;String 类型&quot;&gt;&lt;/a&gt;String 类型&lt;/h1&gt;&lt;p&gt;1.’’ 或者 “” 都可以表示一个字符串    &lt;/p&gt;
+&lt;ol start=&quot;2
       
     
     </summary>
     
+    
+      <category term="Js, String" scheme="http://yoursite.com/tags/Js-String/"/>
     
   </entry>
   
