@@ -286,223 +286,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/语句/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mudai">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/20/语句/" class="post-title-link" itemprop="url">语句</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-04-20 19:01:24 / Geändert am: 19:06:39" itemprop="dateCreated datePublished" datetime="2019-04-20T19:01:24+08:00">2019-04-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><ul>
-<li>第一种用法</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( i &gt; <span class="number">25</span> ) &#123;</span><br><span class="line">    alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"Less than or equal to 25."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>第二种用法</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">    alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    alert(<span class="string">"Less than 0."</span>); </span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"Between 0 and 25, inclusive."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do-while语句"></a>do-while语句</h4><blockquote>
-<p>后测试语句，循环体的语句至少被执行一次</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    i += <span class="number">2</span>;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">2</span>);     <span class="comment">//此时代码块只能被执行一次，也是至少执行的一次，碰到判断条件停止循环</span></span><br></pre></td></tr></table></figure>
-<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h4><blockquote>
-<p>先判断再执行，代码块的语句有可能永远不能执行</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    i += <span class="number">2</span>;</span><br><span class="line">&#125;                    <span class="comment">//先判断是否符合条件，再执行</span></span><br></pre></td></tr></table></figure>
-<h4 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h4><blockquote>
-<p>前测试循环语句</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (initialzation; expression; post-loop-expression) </span><br><span class="line">&#123;</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    j += <span class="number">1</span>;</span><br><span class="line">&#125;                   <span class="comment">//初始化i等于0，判断i小于n,执行代码快里的语句，再执行i++语句，后面依次循环</span></span><br></pre></td></tr></table></figure>
-<h4 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h4><blockquote>
-<p>一种精准的迭代语句，可以用来枚举对象的属性</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( property <span class="keyword">in</span> expression) &#123;</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> Window) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(propName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="break、continue、label语句"><a href="#break、continue、label语句" class="headerlink" title="break、continue、label语句"></a>break、continue、label语句</h4><blockquote>
-<p>label 语句可以和break，continue在多重循环中搭配使用</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label: statement;      <span class="comment">//label语句的格式</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>break语句用来完全跳出循环，continue语句用来跳出大循环中的一次循环并开始下一次循环</p>
-</blockquote>
-<p>示例：break</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) <span class="keyword">break</span>;   <span class="comment">//number=55时，退出内层循环，所以少循环了5次</span></span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;           <span class="comment">//number最后的值为95</span></span><br></pre></td></tr></table></figure>
-<p>示例: continue</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j =<span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ( i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) <span class="keyword">continue</span>; <span class="comment">//number = 55时，跳过一次内层循环，最后少循环了一次</span></span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;			<span class="comment">//number最后的值为99</span></span><br></pre></td></tr></table></figure>
-<p>示例：break label   </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line">start:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span> start;</span><br><span class="line">        &#125;  </span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>循环跳到start标签处，所以number最后的值为55</p>
-</blockquote>
-<p>示例：continue label</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line">start:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span> start;</span><br><span class="line">        &#125;  </span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;        <span class="comment">//number = 95</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>循环跳到label标签处，即就是当满足continue条件时，start标签处的外层循环跳过一次，直接从i= 5，j= 5处进入i = 6，j= 0处，所以number的值最后为95</p>
-</blockquote>
-<h4 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h4><blockquote>
-<p>with语句的作用是将代码的作用域设置到一个特定的对象中去</p>
-<p>with语句可以简化代码，但是同时也会造成性能下降，严格模式下禁用</p>
-</blockquote>
-<p>示例：未使用with语句</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> hostName = location.hostname;</span><br><span class="line"><span class="keyword">var</span> url = location.href;</span><br></pre></td></tr></table></figure>
-<p>示例：使用with语句</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(location) &#123;</span><br><span class="line">    <span class="keyword">var</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">var</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4><blockquote>
-<p>一个表达式，而需要对表达式的多个值进行不同的处理方式时使用</p>
-</blockquote>
-<p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value3: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: alert(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>: alert(<span class="string">"4"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>可以混合case情形，注意要删去break</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="comment">//合并两种情形</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        alert(<span class="string">"4"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>可以在 switch 语句中使用任何数据类型（在很多其他语言中只能使用数值），无论是字符串，还是对象都没有 问题。其次，每个 case的值不一定是常量，可以是变量，甚至是表达式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (<span class="string">"hello world"</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"hello"</span> +<span class="string">"world"</span>:</span><br><span class="line">        alert(<span class="string">"Greeting was found."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"goodbye"</span>:</span><br><span class="line">        alert(<span class="string">"Closing was found."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>switch表达式在与case匹配时，采用全等操作符，故不会发生类型转换，’10’不等于10</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,7 +331,7 @@
                 
               
 
-              <time title="Erstellt: 2019-04-20 17:23:21 / Geändert am: 17:25:01" itemprop="dateCreated datePublished" datetime="2019-04-20T17:23:21+08:00">2019-04-20</time>
+              <time title="Erstellt: 2019-04-20 17:23:21 / Geändert am: 19:09:17" itemprop="dateCreated datePublished" datetime="2019-04-20T17:23:21+08:00">2019-04-20</time>
             
 
             
@@ -1162,7 +945,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -1181,7 +964,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">schlagwörter</span>
                   
                 </div>
