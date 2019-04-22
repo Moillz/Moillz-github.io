@@ -331,7 +331,7 @@
                 
               
 
-              <time title="Erstellt: 2019-04-22 17:00:05 / Geändert am: 17:01:27" itemprop="dateCreated datePublished" datetime="2019-04-22T17:00:05+08:00">2019-04-22</time>
+              <time title="Erstellt: 2019-04-22 17:00:05 / Geändert am: 17:19:36" itemprop="dateCreated datePublished" datetime="2019-04-22T17:00:05+08:00">2019-04-22</time>
             
 
             
@@ -503,6 +503,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/基本类型和引用类型的值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mudai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/22/基本类型和引用类型的值/" class="post-title-link" itemprop="url">基本类型和引用类型的值</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-04-22 11:42:04 / Geändert am: 17:19:53" itemprop="dateCreated datePublished" datetime="2019-04-22T11:42:04+08:00">2019-04-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h1><p>ECMAScript变量可能有两种数据类型的值，基本类型值和引用类型值，<strong>基本类型值</strong> 指的是简单的数据段，而<strong>引用类型值</strong>指的是那些可能有多个值构成的对象。</p>
+<p>基本数据类型的值都按值访问的，我们可以直接对保存在变量中的值进行操作。而引用类型的值是保存在内存中的对象，JavaScript不允许我们直接对内存进行操作，操作对象的值实际上是通过对象的引用做到的，所以，引用类型的值是按引用访问的。</p>
+<p>这种说法不严密，当复制保存着对象的某个变量时，操作的是对象的引用。但在为对象添加属性时，操作的实际上是对象。</p>
+<blockquote>
+<p>JavaScript中的字符串不是引用类型</p>
+</blockquote>
+<h4 id="动态的属性"><a href="#动态的属性" class="headerlink" title="动态的属性"></a>动态的属性</h4><blockquote>
+<p>对象的实例可以动态添加属性，而基本类型值不能改变。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">book.name = <span class="string">"JavaScript高级程序设计语言"</span>;   <span class="comment">//为对象book动态添加属性</span></span><br><span class="line">alert(book.name);     <span class="comment">//调用book的name属性</span></span><br></pre></td></tr></table></figure>
+<p>而对于基本数据类型则不可以</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"hello"</span>;</span><br><span class="line">name.age = <span class="number">23</span>;</span><br><span class="line">alert(name.age) <span class="comment">//undefine</span></span><br></pre></td></tr></table></figure>
+<h4 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h4><p>不仅两种类型值得存储方式不一样，在对基本类型值和引用类型值进行复制操作的时候，也存在不同</p>
+<p>对基本类型值复制，将会创建一个相同类型的变量，然后在将原变量的值复制给新变量，这时，新变量和原变量两者相互独立。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = num1;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>此后，两个变量相互独立，对其中一个变量的操作不会影响另一变量</p>
+</blockquote>
+<p>对引用类型值得复制，同样也会将存储在变量对象中的值复制一份放到 为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一 个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另 一个变量，如下面的例子所示： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line">obj1.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">alert(obj2.name);  <span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于是引用类型值，所以两者相互关联</p>
+</blockquote>
+<p><img src="E:\笔记\图片\引用类型值的复制.png" alt></p>
+<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><p>ECMAScript 中所有函数的参数都是按值传递的。也就是说，把函数外部的值复制给函数内部的参 数，就和把值从一个变量复制到另一个变量一样。<strong>基本类型值的传递如同基本类型变量的复制一样，而 引用类型值的传递，则如同引用类型变量的复制一样。</strong></p>
+<blockquote>
+<p>在向参数传递基本类型的值时，被传递的值会被复制给一个局部变量（即命名参数，或者用 ECMAScript的概念来说，就是<code>arguments</code>中的一个元素），比如：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">20</span>;</span><br><span class="line">addTen(num);</span><br><span class="line">alert(num);    <span class="comment">// 20</span></span><br><span class="line">alert(addTen(num))       <span class="comment">// 30</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在向参数传递引用类型的值时，会把 这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反映在函数的外部。比如 ：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    obj.name = <span class="string">"Xiaohua"</span>;</span><br><span class="line">    obj = <span class="keyword">new</span> <span class="built_in">Object</span>();      <span class="comment">//将局部变量obj重新定义了一个对象</span></span><br><span class="line">    obj.name = <span class="string">"Xiaoming"</span>;   <span class="comment">//并将name属性改为"Xiaoming"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);     <span class="comment">//Xiaohua</span></span><br></pre></td></tr></table></figure>
+<p>这里的结果充分反映了，函数参数的传递为值传递，如果这里是引用传递的话，<code>person</code>的<code>name</code>属性应该为<code>Xiaoming</code></p>
+<h4 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h4><p>通常用来检测引用类型的值，比如，我们想知道这是什么类型的对象</p>
+<p>操作符<code>instanceof</code> ,比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);   <span class="comment">//变量person是Object吗？</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> <span class="built_in">Array</span>);    <span class="comment">//变量person是Array吗？</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果变量的给定的应用类型的实例，则返回true</p>
+</blockquote>
+<blockquote>
+<p>根据规定，所有的引用类型都是Object的实例</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -548,12 +733,24 @@
                 
               
 
-              <time title="Erstellt: 2019-04-20 17:23:21 / Geändert am: 19:09:17" itemprop="dateCreated datePublished" datetime="2019-04-20T17:23:21+08:00">2019-04-20</time>
+              <time title="Erstellt: 2019-04-20 17:23:21" itemprop="dateCreated datePublished" datetime="2019-04-20T17:23:21+08:00">2019-04-20</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-04-22 17:21:05" itemprop="dateModified" datetime="2019-04-22T17:21:05+08:00">2019-04-22</time>
               
             
           </span>
@@ -753,12 +950,24 @@
                 
               
 
-              <time title="Erstellt: 2019-04-15 18:47:57 / Geändert am: 22:25:00" itemprop="dateCreated datePublished" datetime="2019-04-15T18:47:57+08:00">2019-04-15</time>
+              <time title="Erstellt: 2019-04-15 18:47:57" itemprop="dateCreated datePublished" datetime="2019-04-15T18:47:57+08:00">2019-04-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-04-22 17:21:10" itemprop="dateModified" datetime="2019-04-22T17:21:10+08:00">2019-04-22</time>
               
             
           </span>
@@ -970,7 +1179,7 @@
                 
                   <span class="post-meta-item-text">Bearbeitet am</span>
                 
-                <time title="Geändert am: 2019-04-15 22:15:36" itemprop="dateModified" datetime="2019-04-15T22:15:36+08:00">2019-04-15</time>
+                <time title="Geändert am: 2019-04-22 17:20:56" itemprop="dateModified" datetime="2019-04-22T17:20:56+08:00">2019-04-22</time>
               
             
           </span>
@@ -1006,7 +1215,7 @@
       
         
           
-            <h2 id="动画的基础知识"><a href="#动画的基础知识" class="headerlink" title="动画的基础知识"></a>动画的基础知识</h2><p>动画是样式随时间变化的的一个很好的例子，简单来说，动画就是元素的位置随时间的变化而发生变化的一种函数。     </p>
+            <h1 id="动画的基础知识"><a href="#动画的基础知识" class="headerlink" title="动画的基础知识"></a>动画的基础知识</h1><p>动画是样式随时间变化的的一个很好的例子，简单来说，动画就是元素的位置随时间的变化而发生变化的一种函数。     </p>
 <ol>
 <li><p>位置<br>设置元素在网页里的位置的任务一般是属于表示层的，也就是CSS的任务，例子如下：    </p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">element</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1162,7 +1371,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
