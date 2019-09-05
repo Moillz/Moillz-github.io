@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"offset":12,"onmobile":false,"dimmer":false},
+    back2top: false,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="习题2-1　水仙花数（daffodil）输出100～999中的所有水仙花数。若3位数ABC满足ABC＝A3＋B3＋C3，则称其为水仙花 数。例如153＝13＋53＋33，所以153是水仙花数。 12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;  for(int i = 111; i &amp;lt;= 999; i++)  &amp;#123;">
+<meta name="keywords" content="算法，习题，基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="紫书第二章习题">
+<meta property="og:url" content="http://yoursite.com/2019/09/05/紫书第二章习题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="习题2-1　水仙花数（daffodil）输出100～999中的所有水仙花数。若3位数ABC满足ABC＝A3＋B3＋C3，则称其为水仙花 数。例如153＝13＋53＋33，所以153是水仙花数。 12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;  for(int i = 111; i &amp;lt;= 999; i++)  &amp;#123;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-05T15:26:00.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="紫书第二章习题">
+<meta name="twitter:description" content="习题2-1　水仙花数（daffodil）输出100～999中的所有水仙花数。若3位数ABC满足ABC＝A3＋B3＋C3，则称其为水仙花 数。例如153＝13＋53＋33，所以153是水仙花数。 12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;  for(int i = 111; i &amp;lt;= 999; i++)  &amp;#123;">
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/09/05/紫书第二章习题/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>紫书第二章习题 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Navigationsleiste an/ausschalten">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/首页" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/归档" rel="section"><i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>Archiv<span class="badge">8</span></a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/05/紫书第二章习题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mudai">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">紫书第二章习题
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-09-05 23:14:17 / Geändert am: 23:26:00" itemprop="dateCreated datePublished" datetime="2019-09-05T23:14:17+08:00">2019-09-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="习题2-1-水仙花数（daffodil）"><a href="#习题2-1-水仙花数（daffodil）" class="headerlink" title="习题2-1　水仙花数（daffodil）"></a>习题2-1　水仙花数（daffodil）</h2><p>输出100～999中的所有水仙花数。若3位数ABC满足ABC＝A3＋B3＋C3，则称其为水仙花 数。例如153＝13＋53＋33，所以153是水仙花数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">111</span>; i &lt;= <span class="number">999</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">int</span> a = i / <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = i /<span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> c = i % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> s = a*a*a + b*b*b + c*c*c;</span><br><span class="line">    <span class="keyword">if</span>(s == i) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-2-韩信点兵（hanxin）"><a href="#习题2-2-韩信点兵（hanxin）" class="headerlink" title="习题2-2　韩信点兵（hanxin）"></a>习题2-2　韩信点兵（hanxin）</h2><p>相传韩信才智过人，从不直接清点自己军队的人数，只要让士兵先后以三人一排、五人 一排、七人一排地变换队形，而他每次只掠一眼队伍的排尾就知道总人数了。输入包含多组 数据，每组数据包含3个非负整数a，b，c，表示每种队形排尾的人数（a＜3，b＜5，c＜ 7），输出总人数的最小值（或报告无解）。已知总人数不小于10，不超过100。输入到文件 结束为止。<br>样例输入：<br>2 1 6<br>2 1 3<br>样例输出：<br>Case 1: 41<br>Case 2: No answer</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOCAL</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">  freopen(<span class="string">"data.in"</span>,<span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"data.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">  <span class="keyword">int</span> i,a, b, c;</span><br><span class="line">  <span class="keyword">int</span> kase = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>, &amp;a,&amp;b,&amp;c) != EOF)</span><br><span class="line">  &#123;</span><br><span class="line">   <span class="comment">// printf("a = %d b = %d c = %d", a, b, c);</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">10</span>; i&lt;=<span class="number">100</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="keyword">if</span>(i % <span class="number">3</span> == a &amp;&amp; i % <span class="number">5</span> == b &amp;&amp; i % <span class="number">7</span> == c)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span>(kase) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d: %d\n"</span>, ++kase,i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(i &gt;= <span class="number">101</span>)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span>(kase) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d: No answer\n"</span>, ++kase);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-3-倒三角形（triangle）"><a href="#习题2-3-倒三角形（triangle）" class="headerlink" title="习题2-3　倒三角形（triangle）"></a>习题2-3　倒三角形（triangle）</h2><p>输入正整数n≤20，输出一个n层的倒三角形。例如，n＝5时输出如下：</p>
+<p>#########</p>
+<p> #######  </p>
+<p>   #####</p>
+<p>​    ###</p>
+<p>​     #</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n,tag = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">int</span> kase = <span class="number">2</span>*(i<span class="number">-1</span>)+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tag; j++) </span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//打印空格高级一点的写法</span></span><br><span class="line">   <span class="comment">/* for(int k = 0; k &lt; n-i; k++)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">      printf(" ");</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">    <span class="keyword">while</span>(kase)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"#"</span>);</span><br><span class="line">      kase--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    tag++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-4-子序列的和（subsequence）"><a href="#习题2-4-子序列的和（subsequence）" class="headerlink" title="习题2-4　子序列的和（subsequence）"></a>习题2-4　子序列的和（subsequence）</h2><p>输入两个正整数n＜m＜106，输出 ，保留5位小数。输入包含多组数据， 结束标记为n＝m＝0。提示：本题有陷阱。<br>样例输入：<br>2 4<br>65536 655360<br>0 0<br>样例输出：<br>Case 1: 0.42361<br>Case 2: 0.00001</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOCAL</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">ifdef</span> LOCAL</span></span><br><span class="line">  freopen(<span class="string">"data.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"data.out"</span>,<span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">  <span class="keyword">int</span>  k = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> n, m;</span><br><span class="line">  <span class="keyword">double</span>  s;</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;m) != EOF &amp;&amp; n &amp;&amp; m)</span><br><span class="line">  &#123;</span><br><span class="line">    s = <span class="number">0</span>; <span class="comment">//s要清零</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &lt;= m; i++) </span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">//s += (1.0/(i*i)); //乘法溢出</span></span><br><span class="line">      s += (<span class="number">1.0</span>/i/i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k) <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Case %d: %.5f\n"</span>,++k,s);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-5-分数化小数（decimal）"><a href="#习题2-5-分数化小数（decimal）" class="headerlink" title="习题2-5　分数化小数（decimal）"></a>习题2-5　分数化小数（decimal）</h2><p>输入正整数a，b，c，输出a/b的小数形式，精确到小数点后c位。a，b≤106，c≤100。输 入包含多组数据，结束标记为a＝b＝c＝0。<br>样例输入：<br>1 6 4<br>0 0 0<br>样例输出：<br>Case 1: 0.1667</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  FILE *fin, *fout;</span><br><span class="line">  fin = fopen(<span class="string">"data.in"</span>,<span class="string">"rb"</span>);</span><br><span class="line">  fout = fopen(<span class="string">"data.out"</span>,<span class="string">"wb"</span>);</span><br><span class="line">  <span class="keyword">int</span> a, b, c, kase = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="built_in">fscanf</span>(fin,<span class="string">"%d %d %d"</span>,&amp;a, &amp;b, &amp;c) != EOF &amp;&amp; a &amp;&amp; b &amp;&amp; c)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">double</span> d = (<span class="keyword">double</span>)a/b;</span><br><span class="line">    <span class="keyword">if</span>(kase) <span class="built_in">fprintf</span>(fout,<span class="string">"\n"</span>);</span><br><span class="line">    <span class="built_in">fprintf</span>(fout,<span class="string">"Case %d: %.*lf\n"</span>, ++kase, c, d);</span><br><span class="line">    <span class="comment">//用%.*lf控制输出长度，小数点后面的*表示输出位数，具体数字来自参数表</span></span><br><span class="line">  &#125;</span><br><span class="line">  fclose(fin);</span><br><span class="line">  fclose(fout);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="习题2-6-排列（permutation）"><a href="#习题2-6-排列（permutation）" class="headerlink" title="习题2-6　排列（permutation）"></a>习题2-6　排列（permutation）</h2><p>用1，2，3，…，9组成3个三位数<code>abc</code>，<code>def</code>和<code>ghi</code>，每个数字恰好使用一次，要 求<code>abc：def：ghi＝1：2：3</code>。按照<code>“abc def ghi”</code>的格式输出所有解，每行一个解。提示：不必 太动脑筋。</p>
+<blockquote>
+<p>没有思路</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法，习题，基础/" rel="tag"># 算法，习题，基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/04/算法比赛中的输入输出框架/" rel="next" title="算法比赛中的输入输出框架">
+                <i class="fa fa-chevron-left"></i> 算法比赛中的输入输出框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Mudai</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/归档">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">schlagwörter</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                  <a href="https://Moillz.github.io" title="GitHub &rarr; https://Moillz.github.io" rel="noopener" target="_blank">GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-1-水仙花数（daffodil）"><span class="nav-number">1.</span> <span class="nav-text">习题2-1　水仙花数（daffodil）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-2-韩信点兵（hanxin）"><span class="nav-number">2.</span> <span class="nav-text">习题2-2　韩信点兵（hanxin）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-3-倒三角形（triangle）"><span class="nav-number">3.</span> <span class="nav-text">习题2-3　倒三角形（triangle）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-4-子序列的和（subsequence）"><span class="nav-number">4.</span> <span class="nav-text">习题2-4　子序列的和（subsequence）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-5-分数化小数（decimal）"><span class="nav-number">5.</span> <span class="nav-text">习题2-5　分数化小数（decimal）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习题2-6-排列（permutation）"><span class="nav-number">6.</span> <span class="nav-text">习题2-6　排列（permutation）</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mudai</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
