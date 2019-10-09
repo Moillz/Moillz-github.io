@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-26T12:59:29.584Z</updated>
+  <updated>2019-10-09T02:26:11.430Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改npm源</title>
+    <link href="http://yoursite.com/2019/10/09/%E4%BF%AE%E6%94%B9npm%E6%BA%90/"/>
+    <id>http://yoursite.com/2019/10/09/修改npm源/</id>
+    <published>2019-10-09T02:21:08.000Z</published>
+    <updated>2019-10-09T02:26:11.430Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="修改npm源为淘宝源"><a href="#修改npm源为淘宝源" class="headerlink" title="修改npm源为淘宝源"></a>修改npm源为淘宝源</h2><p><code>npm config set registry http://registry.npm.taobao.org/</code></p><h2 id="查看当前源地址"><a href="#查看当前源地址" class="headerlink" title="查看当前源地址"></a>查看当前源地址</h2><p><code>npm config get registry</code></p><h2 id="重置为官方源"><a href="#重置为官方源" class="headerlink" title="重置为官方源"></a>重置为官方源</h2><p><code>npm config set registry https://registry.npmjs.org/</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;修改npm源为淘宝源&quot;&gt;&lt;a href=&quot;#修改npm源为淘宝源&quot; class=&quot;headerlink&quot; title=&quot;修改npm源为淘宝源&quot;&gt;&lt;/a&gt;修改npm源为淘宝源&lt;/h2&gt;&lt;p&gt;&lt;code&gt;npm config set registry http://r
+      
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>如此可爱的语法糖“...”</title>
