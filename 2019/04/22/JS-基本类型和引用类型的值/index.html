@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/22/JS-基本类型和引用类型的值/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="基本类型和引用类型的值ECMAScript变量可能有两种数据类型的值，基本类型值和引用类型值，基本类型值 指的是简单的数据段，而引用类型值指的是那些可能有多个值构成的对象。 基本数据类型的值都按值访问的，我们可以直接对保存在变量中的值进行操作。而引用类型的值是保存在内存中的对象，JavaScript不允许我们直接对内存进行操作，操作对象的值实际上是通过对象的引用做到的，所以，引用类型的值是按引用访">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="e:/笔记/图片/引用类型值的复制.png">
 <meta property="og:updated_time" content="2019-04-22T09:27:46.045Z">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,7 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'zh-Hans'
+    lang   : 'en'
   };
 </script>
 
@@ -88,7 +88,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -122,22 +122,22 @@
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>معلومات</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>الوسوم</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>التصنيفات</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
   </ul>
@@ -167,11 +167,11 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/JS-基本类型和引用类型的值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Mudai">
       <meta itemprop="description" content>
     </span>
@@ -189,10 +189,10 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="أُنشأ: 2019-04-22 17:26:14 / عُدل: 17:27:46" itemprop="dateCreated datePublished" datetime="2019-04-22T17:26:14+08:00">2019-04-22</time>
+              <time title="Created: 2019-04-22 17:26:14 / Modified: 17:27:46" itemprop="dateCreated datePublished" datetime="2019-04-22T17:26:14+08:00">2019-04-22</time>
             </span>
 
           
@@ -323,10 +323,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Table of Contents
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Overview
         </li>
       </ul>
 
@@ -338,7 +338,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mudai" src="/images/avatar.gif">
+    <img class="site-author-image" itemprop="image" alt="Mudai" src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Mudai</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -348,12 +348,12 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">10</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">الوسوم</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -393,7 +393,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Mudai</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 
         
