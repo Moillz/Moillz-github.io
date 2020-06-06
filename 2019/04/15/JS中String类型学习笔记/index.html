@@ -20,18 +20,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="String 类型1.’’ 或者 “” 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’表示">
-<meta name="keywords" content="Js, String">
+  <meta name="description" content="String 类型1.’ ‘ 或者 “ “ 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’">
+<meta name="keywords" content="JavaScript,String">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中String类型学习笔记">
 <meta property="og:url" content="http://yoursite.com/2019/04/15/JS中String类型学习笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="String 类型1.’’ 或者 “” 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’表示">
+<meta property="og:description" content="String 类型1.’ ‘ 或者 “ “ 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-22T09:21:10.892Z">
+<meta property="og:updated_time" content="2020-06-06T07:40:58.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中String类型学习笔记">
-<meta name="twitter:description" content="String 类型1.’’ 或者 “” 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’表示">
+<meta name="twitter:description" content="String 类型1.’ ‘ 或者 “ “ 都可以表示一个字符串2.字符字面量，就是转义字符      字面量 含义     \n 换行   \t 制表符   \b 空格   \r 回车   \f 进制   \\ 斜杠   \‘ 单引号，如 ‘ It \‘s mine ‘   \“ 双引号， 如 “ He said,\“hi\“ “   \xnn 以十六进制(n为0~f)表示的字符，如’\x41’">
 
 <link rel="canonical" href="http://yoursite.com/2019/04/15/JS中String类型学习笔记/">
 
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-22 17:21:10" itemprop="dateModified" datetime="2019-04-22T17:21:10+08:00">2019-04-22</time>
+                <time title="Modified: 2020-06-06 15:40:58" itemprop="dateModified" datetime="2020-06-06T15:40:58+08:00">2020-06-06</time>
               </span>
 
           
@@ -210,7 +210,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h1><p>1.’’ 或者 “” 都可以表示一个字符串<br>2.字符字面量，就是转义字符  </p>
+        <h1 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h1><p>1.’ ‘ 或者 “ “ 都可以表示一个字符串<br>2.字符字面量，就是转义字符  </p>
 <table>
 <thead>
 <tr>
@@ -277,7 +277,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Js-String/" rel="tag"># Js, String</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/String/" rel="tag"># String</a>
           </div>
 
         
@@ -366,20 +367,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
