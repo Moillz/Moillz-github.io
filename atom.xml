@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-06T09:18:10.081Z</updated>
+  <updated>2020-06-15T05:38:16.343Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>深入理解js作用域</title>
+    <title>理解js作用域</title>
     <link href="http://yoursite.com/2020/06/06/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3js%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>http://yoursite.com/2020/06/06/深入理解js作用域/</id>
     <published>2020-06-06T08:53:58.000Z</published>
-    <updated>2020-06-06T09:18:10.081Z</updated>
+    <updated>2020-06-15T05:38:16.343Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是作用域？"><a href="#什么是作用域？" class="headerlink" title="什么是作用域？"></a>什么是作用域？</h2><blockquote><p>作用域就是一套规则，用于确定在何处及如何查找变量（标识符）。</p></blockquote><blockquote><p>在<code>js</code>中，函数可以创建作用域；用<code>let</code>，<code>const</code>关键字配合<code>{}</code>可以创建块作用域</p></blockquote><h3 id="用函数创建作用域"><a href="#用函数创建作用域" class="headerlink" title="用函数创建作用域"></a>用函数创建作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a = "</span> + a);</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">//a = 2</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//1</span></span><br></pre></td></tr></table></figure><p>函数foo里面新创建的变量a处于foo的作用域里，所以不影响外界的a变量</p><h3 id="用let，const创建块作用域"><a href="#用let，const创建块作用域" class="headerlink" title="用let，const创建块作用域"></a>用<code>let</code>，<code>const</code>创建块作用域</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> bar = <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bar) <span class="comment">//ReferenceError</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是作用域？&quot;&gt;&lt;a href=&quot;#什么是作用域？&quot; class=&quot;headerlink&quot; title=&quot;什么是作用域？&quot;&gt;&lt;/a&gt;什么是作用域？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;作用域就是一套规则，用于确定在何处及如何查找变量（标识符）。&lt;/p&gt;
+&lt;/
+      
     
     </summary>
     
