@@ -164,6 +164,163 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/04/Promise学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mudai">
+      <meta itemprop="description" content="自学前端的技术博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/04/Promise学习/" class="post-title-link" itemprop="url">Promise学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-04 10:50:15" itemprop="dateCreated datePublished" datetime="2020-07-04T10:50:15+08:00">2020-07-04</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/04/npm的使用记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mudai">
+      <meta itemprop="description" content="自学前端的技术博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/04/npm的使用记录/" class="post-title-link" itemprop="url">npm的使用记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-04 10:49:49 / Modified: 12:04:09" itemprop="dateCreated datePublished" datetime="2020-07-04T10:49:49+08:00">2020-07-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/包管理/" itemprop="url" rel="index"><span itemprop="name">包管理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="NPM是什么"><a href="#NPM是什么" class="headerlink" title="NPM是什么"></a>NPM是什么</h2><p><code>npm</code>是Node.js标准的软件包管理器。使用npm可以将npm仓库里的软件包下载到自己的项目中使用，是前端开发的重要工具。使用npm的前提是安装Node.js.</p>
+<p>首先我们要了解一个重要的文件：</p>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>该文件用来管理项目中的所有依赖，npm可以根据package.json中的配置来下载项目所需的所有依赖。是项目的清单。</p>
+<p>举个例子,当我们打包项目文件想要发布的时候，并不需要将项目所有的依赖库一起打包，因为这些库都是npm仓库里有的，我们只需要有一个package.json文件，里面有项目依赖包的名称，版本信息等。当其他人下载我们的项目文件后，就可以通过package.json文件重新下载依赖。</p>
+<h3 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h3><p>该文件有当前项目中安装的依赖包的具体信息。</p>
+<h3 id="node-modules文件夹"><a href="#node-modules文件夹" class="headerlink" title="node_modules文件夹"></a>node_modules文件夹</h3><p>用npm下载的依赖包都会放在这个文件夹里，一般打包项目文件时，都会自动忽略这个文件夹，因为可以用package.json里面的信息重新下载。</p>
+<h2 id="NPM用法"><a href="#NPM用法" class="headerlink" title="NPM用法"></a>NPM用法</h2><h3 id="安装所有依赖"><a href="#安装所有依赖" class="headerlink" title="安装所有依赖"></a>安装所有依赖</h3><p>如果项目中有package.json文件，则通过运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>它会在node_modules文件夹（如果不存在则会创建）中安装项目所需的所有东西。</p>
+<h3 id="安装单个软件包"><a href="#安装单个软件包" class="headerlink" title="安装单个软件包"></a>安装单个软件包</h3><p>运行下列命令安装单个需要的包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+<p>可选参数：</p>
+<ul>
+<li>–save 安装并添加条目到package.json文件的dependencies；</li>
+<li>–save-dev 安装并添加条目到package.json文件的devDependencies；</li>
+<li>-g 安装到全局环境中，而不是安装到当前文件夹，安装某个框架时经常使用。</li>
+</ul>
+<h3 id="更新软件包"><a href="#更新软件包" class="headerlink" title="更新软件包"></a>更新软件包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm update</span><br><span class="line">npm update &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+<p>npm会根据package.json和package-lock.json两个文件对比计算出当前可更新版本，并执行更新。这两条命令不会更新主版本。举个例子，不会将vue2更新到vue3</p>
+<p>可以通过下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure>
+<p>来查看软件包的新版本。</p>
+<p>若想要所有软件包更新到新的主版本，则需要全局地安装npm-check-updates软件包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g  npm-check-updates</span><br></pre></td></tr></table></figure>
+<p>然后运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ncu -u</span><br></pre></td></tr></table></figure>
+<p>这会升级package.json文件和dependencies和devDependencies中地所有版本，以便npm可以安装到新的主版本。这时再运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update</span><br></pre></td></tr></table></figure>
+<h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><p>npm可以管理版本控制，有些时候一个库和其他库的不同版本兼容性不一样，为了是开发不造成混乱，npm遵循语义版本控制标准</p>
+<h3 id="运行任务"><a href="#运行任务" class="headerlink" title="运行任务"></a>运行任务</h3><p>如果我们在项目中安装了可以独立运行的库，比如mocha</p>
+<p>可以使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run &lt;task-name&gt;</span><br></pre></td></tr></table></figure>
+<p>的形式运行单个任务，此时任务入口在package.json的scripts字段内；</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/Ajax中的XMLHttpRequest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -816,252 +973,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/JS-基本类型和引用类型的值/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Mudai">
-      <meta itemprop="description" content="自学前端的技术博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/04/22/JS-基本类型和引用类型的值/" class="post-title-link" itemprop="url">JS---基本类型和引用类型的值</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-04-22 17:26:14" itemprop="dateCreated datePublished" datetime="2019-04-22T17:26:14+08:00">2019-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 12:33:16" itemprop="dateModified" datetime="2020-06-06T12:33:16+08:00">2020-06-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h1><p>ECMAScript变量可能有两种数据类型的值，基本类型值和引用类型值，<strong>基本类型值</strong> 指的是简单的数据段，而<strong>引用类型值</strong>指的是那些可能有多个值构成的对象。</p>
-<p>基本数据类型的值都按值访问的，我们可以直接对保存在变量中的值进行操作。而引用类型的值是保存在内存中的对象，JavaScript不允许我们直接对内存进行操作，操作对象的值实际上是通过对象的引用做到的，所以，引用类型的值是按引用访问的。</p>
-<p>这种说法不严密，当复制保存着对象的某个变量时，操作的是对象的引用。但在为对象添加属性时，操作的实际上是对象。</p>
-<blockquote>
-<p>JavaScript中的字符串不是引用类型</p>
-</blockquote>
-<h4 id="动态的属性"><a href="#动态的属性" class="headerlink" title="动态的属性"></a>动态的属性</h4><blockquote>
-<p>对象的实例可以动态添加属性，而基本类型值不能改变。</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> book = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">book.name = <span class="string">"JavaScript高级程序设计语言"</span>;   <span class="comment">//为对象book动态添加属性</span></span><br><span class="line">alert(book.name);     <span class="comment">//调用book的name属性</span></span><br></pre></td></tr></table></figure>
-<p>而对于基本数据类型则不可以</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"hello"</span>;</span><br><span class="line">name.age = <span class="number">23</span>;</span><br><span class="line">alert(name.age) <span class="comment">//undefine</span></span><br></pre></td></tr></table></figure>
-<h4 id="复制变量值"><a href="#复制变量值" class="headerlink" title="复制变量值"></a>复制变量值</h4><p>不仅两种类型值得存储方式不一样，在对基本类型值和引用类型值进行复制操作的时候，也存在不同</p>
-<p>对基本类型值复制，将会创建一个相同类型的变量，然后在将原变量的值复制给新变量，这时，新变量和原变量两者相互独立。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num1 = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">var</span> num2 = num1;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>此后，两个变量相互独立，对其中一个变量的操作不会影响另一变量</p>
-</blockquote>
-<p>对引用类型值得复制，同样也会将存储在变量对象中的值复制一份放到 为新变量分配的空间中。不同的是，这个值的副本实际上是一个指针，而这个指针指向存储在堆中的一 个对象。复制操作结束后，两个变量实际上将引用同一个对象。因此，改变其中一个变量，就会影响另 一个变量，如下面的例子所示： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> obj2 = obj1;</span><br><span class="line">obj1.name = <span class="string">"Nicholas"</span>;</span><br><span class="line">alert(obj2.name);  <span class="comment">//"Nicholas"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>由于是引用类型值，所以两者相互关联</p>
-</blockquote>
-<p><img src="E:\笔记\图片\引用类型值的复制.png" alt></p>
-<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><p>ECMAScript 中所有函数的参数都是按值传递的。也就是说，把函数外部的值复制给函数内部的参 数，就和把值从一个变量复制到另一个变量一样。<strong>基本类型值的传递如同基本类型变量的复制一样，而 引用类型值的传递，则如同引用类型变量的复制一样。</strong></p>
-<blockquote>
-<p>在向参数传递基本类型的值时，被传递的值会被复制给一个局部变量（即命名参数，或者用 ECMAScript的概念来说，就是<code>arguments</code>中的一个元素），比如：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">20</span>;</span><br><span class="line">addTen(num);</span><br><span class="line">alert(num);    <span class="comment">// 20</span></span><br><span class="line">alert(addTen(num))       <span class="comment">// 30</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在向参数传递引用类型的值时，会把 这个值在内存中的地址复制给一个局部变量，因此这个局部变量的变化会反映在函数的外部。比如 ：</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    obj.name = <span class="string">"Xiaohua"</span>;</span><br><span class="line">    obj = <span class="keyword">new</span> <span class="built_in">Object</span>();      <span class="comment">//将局部变量obj重新定义了一个对象</span></span><br><span class="line">    obj.name = <span class="string">"Xiaoming"</span>;   <span class="comment">//并将name属性改为"Xiaoming"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);     <span class="comment">//Xiaohua</span></span><br></pre></td></tr></table></figure>
-<p>这里的结果充分反映了，函数参数的传递为值传递，如果这里是引用传递的话，<code>person</code>的<code>name</code>属性应该为<code>Xiaoming</code></p>
-<h4 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h4><p>通常用来检测引用类型的值，比如，我们想知道这是什么类型的对象</p>
-<p>操作符<code>instanceof</code> ,比如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);   <span class="comment">//变量person是Object吗？</span></span><br><span class="line">alert(person <span class="keyword">instanceof</span> <span class="built_in">Array</span>);    <span class="comment">//变量person是Array吗？</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>如果变量的给定的应用类型的实例，则返回true</p>
-</blockquote>
-<blockquote>
-<p>根据规定，所有的引用类型都是Object的实例</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/JavaScript-语句/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Mudai">
-      <meta itemprop="description" content="自学前端的技术博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/04/22/JavaScript-语句/" class="post-title-link" itemprop="url">JavaScript---语句</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-04-22 17:00:05" itemprop="dateCreated datePublished" datetime="2019-04-22T17:00:05+08:00">2019-04-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-06 17:19:32" itemprop="dateModified" datetime="2020-06-06T17:19:32+08:00">2020-06-06</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h1><h4 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h4><ul>
-<li>第一种用法</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( i &gt; <span class="number">25</span> ) &#123;</span><br><span class="line">    alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"Less than or equal to 25."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>第二种用法</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (i &gt; <span class="number">25</span>) &#123;</span><br><span class="line">    alert(<span class="string">"Greater than 25."</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    alert(<span class="string">"Less than 0."</span>); </span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"Between 0 and 25, inclusive."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do-while语句"></a>do-while语句</h4><blockquote>
-<p>后测试语句，循环体的语句至少被执行一次</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    i += <span class="number">2</span>;</span><br><span class="line">&#125; <span class="keyword">while</span> (i &lt; <span class="number">2</span>);     <span class="comment">//此时代码块只能被执行一次，也是至少执行的一次，碰到判断条件停止循环</span></span><br></pre></td></tr></table></figure>
-<h4 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h4><blockquote>
-<p>先判断再执行，代码块的语句有可能永远不能执行</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    i += <span class="number">2</span>;</span><br><span class="line">&#125;                    <span class="comment">//先判断是否符合条件，再执行</span></span><br></pre></td></tr></table></figure>
-<h4 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h4><blockquote>
-<p>前测试循环语句</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (initialzation; expression; post-loop-expression) </span><br><span class="line">&#123;</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    j += <span class="number">1</span>;</span><br><span class="line">&#125;                   <span class="comment">//初始化i等于0，判断i小于n,执行代码快里的语句，再执行i++语句，后面依次循环</span></span><br></pre></td></tr></table></figure>
-<h4 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h4><blockquote>
-<p>一种精准的迭代语句，可以用来枚举对象的属性</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> ( property <span class="keyword">in</span> expression) &#123;</span><br><span class="line">    statement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> propName <span class="keyword">in</span> Window) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(propName);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="break、continue、label语句"><a href="#break、continue、label语句" class="headerlink" title="break、continue、label语句"></a>break、continue、label语句</h4><blockquote>
-<p>label 语句可以和break，continue在多重循环中搭配使用</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label: statement;      <span class="comment">//label语句的格式</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>break语句用来完全跳出循环，continue语句用来跳出大循环中的一次循环并开始下一次循环</p>
-</blockquote>
-<p>示例：break</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) <span class="keyword">break</span>;   <span class="comment">//number=55时，退出内层循环，所以少循环了5次</span></span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;           <span class="comment">//number最后的值为95</span></span><br></pre></td></tr></table></figure>
-<p>示例: continue</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j =<span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ( i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>) <span class="keyword">continue</span>; <span class="comment">//number = 55时，跳过一次内层循环，最后少循环了一次</span></span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;			<span class="comment">//number最后的值为99</span></span><br></pre></td></tr></table></figure>
-<p>示例：break label   </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line">start:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span> start;</span><br><span class="line">        &#125;  </span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>循环跳到start标签处，所以number最后的值为55</p>
-</blockquote>
-<p>示例：continue label</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>;</span><br><span class="line">start:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span> start;</span><br><span class="line">        &#125;  </span><br><span class="line">        number++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;        <span class="comment">//number = 95</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>循环跳到<code>label</code>标签处，即就是当满足<code>continue</code>条件时，start标签处的外层循环跳过一次，直接从<code>i= 5，j= 5</code>处进入<code>i = 6，j= 0</code>处，所以<code>number</code>的值最后为<code>95</code></p>
-</blockquote>
-<h4 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h4><blockquote>
-<p>with语句的作用是将代码的作用域设置到一个特定的对象中去</p>
-<p>with语句可以简化代码，但是同时也会造成性能下降，严格模式下禁用</p>
-</blockquote>
-<p>示例：未使用with语句</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> qs = location.search.substring(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> hostName = location.hostname;</span><br><span class="line"><span class="keyword">var</span> url = location.href;</span><br></pre></td></tr></table></figure>
-<p>示例：使用with语句</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span>(location) &#123;</span><br><span class="line">    <span class="keyword">var</span> qs = search.substring(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> hostName = hostname;</span><br><span class="line">    <span class="keyword">var</span> url = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h4><blockquote>
-<p>一个表达式，而需要对表达式的多个值进行不同的处理方式时使用</p>
-</blockquote>
-<p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (expression) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value3: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>: statement;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: alert(<span class="string">"2"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>: alert(<span class="string">"4"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>可以混合case情形，注意要删去break</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">        <span class="comment">//合并两种情形</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        alert(<span class="string">"4"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>可以在 <code>switch</code> 语句中使用任何数据类型（在很多其他语言中只能使用数值），无论是字符串，还是对象都没有 问题。其次，每个 <code>case</code>的值不一定是常量，可以是变量，甚至是表达式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (<span class="string">"hello world"</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"hello"</span> +<span class="string">"world"</span>:</span><br><span class="line">        alert(<span class="string">"Greeting was found."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"goodbye"</span>:</span><br><span class="line">        alert(<span class="string">"Closing was found."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>switch表达式在与case匹配时，采用全等操作符，故不会发生类型转换，’10’不等于10</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1132,14 +1043,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
