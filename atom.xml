@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-05T14:35:59.677Z</updated>
+  <updated>2020-07-27T07:13:40.503Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack中的基本概念</title>
+    <link href="http://yoursite.com/2020/07/27/webpack%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>http://yoursite.com/2020/07/27/webpack中的基本概念/</id>
+    <published>2020-07-27T05:47:51.000Z</published>
+    <updated>2020-07-27T07:13:40.503Z</updated>
+    
+    <content type="html"><![CDATA[<p>四个核心概念：</p><ul><li>入口（entry）</li><li>输出（output）</li><li>loader</li><li>插件（plugins）</li></ul><h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>指定入口文件的路径，作为构建内部依赖图的起点。</p><p>在<strong>webpack.config.js</strong>配置文件中：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./path/to/my/entry/file.js'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="出口"><a href="#出口" class="headerlink" title="出口"></a>出口</h3><p>在配置中添加output字段，指定打包好的文件放置路径和文件名，默认放在<code>./dist</code>文件夹，文件名默认为<code>bundle.js</code>,</p><p>在<strong>webpack.config.js</strong>配置文件中：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);<span class="comment">//引入node.js的path模块</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">'./path/to/my/entry/file.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>), <span class="comment">//路径</span></span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span> <span class="comment">//文件名</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h3><p><code>loader</code>的引入，可以<code>webpack</code>把那些非<code>js</code>文件也当成模块一样处理，简单来说，就是我们的项目中不止有<code>js</code>文件还会有<code>.css</code>，.<code>html</code>，<code>.vue</code>等文件，我们需要引入对应的<code>loader</code>来让<code>webpack</code>能够处理这些文件，并把它们添加到依赖图中去。</p><p>loader用在配置文件中的<code>module</code>字段，这里的<code>module</code>是一个对象，使用<code>loader</code>需要对<code>module</code>对象的<code>rules</code>属性进行设置，<code>rules</code>是一个<strong>数组</strong>，可以在里面进行多个<code>loader</code>配置，<code>rules</code>中的每一项都是一个有两个属性的对象：</p><ul><li>test — 正则表达式，匹配需要处理的文件</li><li>run — 对应的loader名</li></ul><p>在<strong>webpack.config.js</strong>配置文件中：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果我们想要处理.txt的文件。</span></span><br><span class="line"><span class="comment">//当然我们就需要通过npm安装raw-loader</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'my-first-webpack.bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>当我们需要执行特殊任务的时候，就会用到插件，也可以理解成在<code>webpack</code>中引入了一些包，用来让<code>webpack</code>执行特定的任务。</p><ol><li>通过<code>npm</code>安装插件</li><li>通过<code>require()</code>导入插件</li><li>在配置中的<code>plugins</code>字段中<code>new</code>一个插件实例使用它, <code>plugins</code>是个数组，所以可以有多个插件</li></ol><p>在<strong>webpack.config.js</strong>配置文件中：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>); <span class="comment">// 通过 npm 安装</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>); <span class="comment">// 用于访问内置插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, <span class="attr">use</span>: <span class="string">'raw-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">'./src/index.html'</span>&#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;四个核心概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;入口（entry）&lt;/li&gt;
+&lt;li&gt;输出（output）&lt;/li&gt;
+&lt;li&gt;loader&lt;/li&gt;
+&lt;li&gt;插件（plugins）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;入口&quot;&gt;&lt;a href=&quot;#入口&quot; class=&quot;heade
+      
+    
+    </summary>
+    
+      <category term="打包工具" scheme="http://yoursite.com/categories/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>Promise学习</title>
@@ -88,27 +120,6 @@
     
     
       <category term="Ajax" scheme="http://yoursite.com/tags/Ajax/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数组去重</title>
-    <link href="http://yoursite.com/2020/06/15/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/"/>
-    <id>http://yoursite.com/2020/06/15/数组去重/</id>
-    <published>2020-06-15T06:01:47.000Z</published>
-    <updated>2020-06-15T06:17:35.537Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="方法一：利用es6中Set去重"><a href="#方法一：利用es6中Set去重" class="headerlink" title="方法一：利用es6中Set去重"></a>方法一：利用es6中Set去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> uni =  <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">    <span class="keyword">return</span> uni;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">1</span>,<span class="string">'true'</span>,<span class="string">'true'</span>,<span class="literal">true</span>,<span class="literal">true</span>,<span class="number">15</span>,<span class="number">15</span>,<span class="literal">false</span>,<span class="literal">false</span>, <span class="literal">undefined</span>,<span class="literal">undefined</span>, <span class="literal">null</span>,<span class="literal">null</span>, <span class="literal">NaN</span>, <span class="literal">NaN</span>,<span class="string">'NaN'</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="string">'a'</span>, <span class="string">'a'</span>,&#123;&#125;,&#123;&#125;];</span><br><span class="line"><span class="built_in">console</span>.log(unique(arr));</span><br></pre></td></tr></table></figure><p>未考虑兼容性问题，并且无法去掉<code>{}</code>空对象</p><h2 id="方法二：-双重循环加splice去重"><a href="#方法二：-双重循环加splice去重" class="headerlink" title="方法二： 双重循环加splice去重"></a>方法二： 双重循环加splice去重</h2><h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;方法一：利用es6中Set去重&quot;&gt;&lt;a href=&quot;#方法一：利用es6中Set去重&quot; class=&quot;headerlink&quot; title=&quot;方法一：利用es6中Set去重&quot;&gt;&lt;/a&gt;方法一：利用es6中Set去重&lt;/h2&gt;&lt;figure class=&quot;highli
-      
-    
-    </summary>
-    
     
   </entry>
   
